@@ -57,6 +57,16 @@ var tune = function(){
   };
 
 
+$(document).on("keydown", function ( event ) {
+  debugger;
+    F_KEY = 70;
+      if ( event.which === F_KEY ) {
+        event.preventDefault();
+        playNote(0, 8, 0.5)
+      }
+})
+
+
     // var oscillator = audioContext.createOscillator()
     // oscillator.connect(audioContext.destination)
     //
