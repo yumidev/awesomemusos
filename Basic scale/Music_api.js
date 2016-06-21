@@ -35,26 +35,92 @@ var playNote = function(delay, pitch, duration){
   };
 
 
+var noteLowC = function (){
+  playNote(0, 3, 0.5);
+};
+var noteCSharp = function (){
+  playNote(0, 4, 0.5);
+};
+
+var noteD = function (){
+  playNote(0, 5, 0.5);
+};
+
+var noteEFlat = function (){
+  playNote(0, 6, 0.5);
+};
+
+var noteE = function (){
+  playNote(0, 7, 0.5);
+};
+
+var noteF = function (){
+  playNote(0, 8, 0.5);
+};
+
+var noteFSharp = function (){
+  playNote(0, 9, 0.5);
+};
+
+
+var noteG = function (){
+  playNote(0, 10, 0.5);
+};
+
+var noteGSharp = function (){
+  playNote(0, 11, 0.5);
+};
+
+var noteA = function (){
+  playNote(0, 12, 0.5);
+};
+
+var noteGSharp = function (){
+  playNote(0, 11, 0.5);
+};
+
+var noteBFlat = function (){
+  playNote(0, 13, 0.5);
+};
+
+var noteB = function (){
+  playNote(0, 14, 0.5);
+};
+
+var noteTopC = function (){
+  playNote(0, 15, 0.5);
+};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 //This code will play a small tune
 
-var tune = function(){
+// var tune = function(){
 
-    playNote(0, 3, 0.5);
-    playNote(1, 10, 0.5);
-    playNote(2, 15, 0.5);
-    playNote(2, 19, 0.5);
-    playNote(3, 15, 0.5);
-    playNote(4, 3, 0.5);
-    playNote(5, 10, 0.5);
-    playNote(6, 15, 0.5);
-    playNote(6, 19, 0.5);
-    playNote(7, 15, 0.5);
-    playNote;
-  };
+    // playNote(0, 3, 0.5);
+    // playNote(1, 10, 0.5);
+    // playNote(2, 15, 0.5);
+    // playNote(3, 19, 0.5);
+    // playNote(3, 15, 0.5);
+    // playNote(4, 3, 0.5);
+    // playNote(5, 10, 0.5);
+    // playNote(6, 15, 0.5);
+    // playNote(6, 19, 0.5);
+    // playNote(7, 15, 0.5);
+    // // playNote;
+  // };
 
 
     // var oscillator = audioContext.createOscillator()
