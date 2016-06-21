@@ -36,7 +36,7 @@ var playNote = function(delay, pitch, duration){
 
 
   var noteLowC = function (){
-    playNote(0, 3, 0.5);
+    playNote(0, 3, 0.2);
   };
   var noteCSharp = function (){
     playNote(0, 4, 0.5);
@@ -94,7 +94,7 @@ var playNote = function(delay, pitch, duration){
 //This code will play a small tune
 //
 // var tune = function(){
-<<<<<<< HEAD
+
 
     playNote(0, 3, 0.5);
     playNote(1, 10, 0.5);
@@ -110,7 +110,6 @@ var playNote = function(delay, pitch, duration){
   // };
 
 
-=======
 //
 //     playNote(0, 3, 0.5);
 //     playNote(1, 10, 0.5);
@@ -210,7 +209,7 @@ console.log(notes);
   A_KEY = 65;
   S_KEY = 83;
   D_KEY = 68;
-  F_KEY = 70;
+  F_KEY = 70;;
   G_KEY = 71;
   H_KEY = 72;
   J_KEY = 74;
@@ -219,7 +218,20 @@ console.log(notes);
 
   playKeydown(event);
 
-})
+});
+for var i track lenght song = track + track
+
+call all functions at the same time!
+
+var track = [
+  [0,6],
+  k
+
+  fjdks;f
+
+
+]
+
 
     // var oscillator = audioContext.createOscillator()
     // oscillator.connect(audioContext.destination)
