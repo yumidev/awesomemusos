@@ -12,12 +12,32 @@
 // oscillator.start(audioContext.currentTime)
 // oscillator.stop(audioContext.currentTime + 2)
 // oscillator.type = 'sawtooth'
-var notes = [];
+// var notes = [];
+
+// This will draw the notes on the stave
+var canvas = $("canvas")[0];
+var renderer = new Vex.Flow.Renderer(canvas, Vex.Flow.Renderer.Backends.CANVAS);
+
+var ctx = renderer.getContext();
+var stave = new Vex.Flow.Stave(10, 0, 500);
+stave.addClef("treble").setContext(ctx).draw();
+
+
+
+
+var createNote = function () {
+
+}
+
+var bindingKeyToNote = function (event) {
+
+  notes.push()
+}
+
 
 console.log("hello music maker");
 
 var audioContext = new AudioContext();
-
 //This plays a small tune when the browser starts.  It executes immediately.  I can't figure out how to get it to execute on click.
 
 var playNote = function(delay, pitch, duration){
@@ -175,6 +195,17 @@ var playKeydown= function(event){
   if ( event.which === J_KEY ) {
     event.preventDefault();
     playNote(0, 14, 0.5)
+    var test = new Vex.Flow.StaveNote({ keys: ["c/4"], duration: "q" })
+    notes.push(test)
+    // Add notes to voice
+    voice.addTickables(notes);
+
+    // Format and justify the notes to 500 pixels
+    var formatter = new Vex.Flow.Formatter().
+      joinVoices([voice]).format([voice], 500);
+
+    // Render voice
+    voice.draw(ctx, stave);
   }
   if ( event.which === K_KEY ) {
     event.preventDefault();
@@ -186,9 +217,25 @@ var playKeydown= function(event){
   }
 }
 
+// Create the notes
+  var notes = [
+    // A quarter-note C.
+    // new Vex.Flow.StaveNote({ keys: ["c/4"], duration: "q" }),
+
+    // A quarter-note D.
+    new Vex.Flow.StaveNote({ keys: ["d/4"], duration: "q" }),
+
+    // A quarter-note rest. Note that the key (b/4) specifies the vertical
+    // position of the rest.
+    new Vex.Flow.StaveNote({ keys: ["b/4"], duration: "qr" }),
+
+    // A C-Major chord.
+    new Vex.Flow.StaveNote({ keys: ["c/4", "e/4", "g/4"], duration: "q" })
+  ];
+
 $(document).on("keydown", function ( event ) {
   // debugger;
-  notes.push(event.which)
+  // notes.push(event.which)
 console.log(notes);
   A_KEY = 65;
   S_KEY = 83;
@@ -203,6 +250,17 @@ console.log(notes);
   playKeydown(event);
 
 })
+
+
+
+  // Create a voice in 4/4
+  var voice = new Vex.Flow.Voice({
+    num_beats: 4,
+    beat_value: 4,
+    resolution: Vex.Flow.RESOLUTION
+  });
+
+var beam = new Vex.Flow.Beam(notes);
 
     // var oscillator = audioContext.createOscillator()
     // oscillator.connect(audioContext.destination)
