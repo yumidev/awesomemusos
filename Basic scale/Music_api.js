@@ -12,7 +12,7 @@
 // oscillator.start(audioContext.currentTime)
 // oscillator.stop(audioContext.currentTime + 2)
 // oscillator.type = 'sawtooth'
-
+var notes = [];
 
 console.log("hello music maker");
 
@@ -34,11 +34,6 @@ var playNote = function(delay, pitch, duration){
     oscillator.stop(endTime);
   };
 
-
-
-
-
-
 //This code will play a small tune
 
 var tune = function(){
@@ -56,16 +51,101 @@ var tune = function(){
     playNote;
   };
 
+// This code will play a music file
+  function Sound(source,volume,loop)
+  {
+      this.source=source;
+      this.volume=volume;
+      this.loop=loop;
+      var son;
+      this.son=son;
+      this.finish=false;
+      this.stop=function()
+      {
+          document.body.removeChild(this.son);
+      }
+      this.start=function()
+      {
+          if(this.finish)return false;
+          this.son=document.createElement("embed");
+          this.son.setAttribute("src",this.source);
+          this.son.setAttribute("hidden","true");
+          this.son.setAttribute("volume",this.volume);
+          this.son.setAttribute("autostart","true");
+          this.son.setAttribute("loop",this.loop);
+          document.body.appendChild(this.son);
+      }
+      this.remove=function()
+      {
+          document.body.removeChild(this.son);
+          this.finish=true;
+      }
+      this.init=function(volume,loop)
+      {
+          this.finish=false;
+          this.volume=volume;
+          this.loop=loop;
+      }
+  }
+
+  var foo=new Sound("my.mp3",100,true);
+
+var playKeydown= function(event){
+  if ( event.which === A_KEY ) {
+    event.preventDefault();
+    playNote(0, 3, 0.5)
+  }
+  if ( event.which === S_KEY ) {
+    event.preventDefault();
+    playNote(0, 5, 0.5)
+  }
+  if ( event.which === D_KEY ) {
+    event.preventDefault();
+    playNote(0, 7, 0.5)
+  }
+  if ( event.which === F_KEY ) {
+    event.preventDefault();
+    playNote(0, 8, 0.5)
+  }
+  if ( event.which === G_KEY ) {
+    event.preventDefault();
+    playNote(0, 10, 0.5)
+  }
+  if ( event.which === H_KEY ) {
+    event.preventDefault();
+    playNote(0, 12, 0.5)
+  }
+  if ( event.which === J_KEY ) {
+    event.preventDefault();
+    playNote(0, 14, 0.5)
+  }
+  if ( event.which === K_KEY ) {
+    event.preventDefault();
+    playNote(0, 15, 0.5)
+  }
+  if ( event.which === L_KEY ) {
+    event.preventDefault();
+    foo.start();
+  }
+}
 
 $(document).on("keydown", function ( event ) {
-  debugger;
-    F_KEY = 70;
-      if ( event.which === F_KEY ) {
-        event.preventDefault();
-        playNote(0, 8, 0.5)
-      }
-})
+  // debugger;
+  notes.push(event.which)
+console.log(notes);
+  A_KEY = 65;
+  S_KEY = 83;
+  D_KEY = 68;
+  F_KEY = 70;
+  G_KEY = 71;
+  H_KEY = 72;
+  J_KEY = 74;
+  K_KEY = 75;
+  L_KEY = 76;
 
+  playKeydown(event);
+
+})
 
     // var oscillator = audioContext.createOscillator()
     // oscillator.connect(audioContext.destination)
