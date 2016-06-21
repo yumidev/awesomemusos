@@ -88,7 +88,7 @@ var tune = function(){
       }
   }
 
-  var foo=new Sound("my.mp3",100,true);
+var foo=new Sound("my.mp3",100,true);
 
 var playKeydown= function(event){
   if ( event.which === A_KEY ) {
