@@ -1,5 +1,24 @@
 
 console.log("hello music maker");
+// var notes = [[keycode, time]]
+
+var test = [[0,0.5],[0,0.5],[10,0.5],[10,0.5],[0,0.5],[0,0.5],[0,0.5],[0,0.5],
+[0,0.5],[0,0.5],[0,0.5],[0,0.5],[10,0.5],[10,0.5],[3,0.5],[3,0.5]]
+var sing;
+// _.map(test,function(a){
+//   var time+=a[1];
+// sing += playNote(time,a[0],a[1])
+// return sing;
+// })
+
+// for(var i=0;i<test.length;i+=1){
+//   playNote(i,test[0],test[1])
+// }
+    // playNote(0, 3, 0.5)playNote(0.5, 10, 0.5)playNote(1, 15, 0.5);
+    // playNote(1.5, 19, 0.5);
+    // playNote(2, 15, 0.5);
+    // playNote(2.5, 3, 0.5);
+
   var notes=[[0,0]];
 
   var fill = [];
@@ -49,6 +68,13 @@ var playNote = function(delay, pitch, duration){
     oscillator.start(startTime);
     oscillator.stop(endTime);
   };
+// $(document).ready(function(){
+//   for(var i=0;i<test.length;i+=1){
+//     // debugger;
+//     playNote(i/2,test[i][0],test[i][1])
+//   }
+// })
+
 
 var noteLowC = function (){
   playNote(0, 3, 0.5);
