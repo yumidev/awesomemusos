@@ -22,6 +22,9 @@ var ctx = renderer.getContext();
 var stave = new Vex.Flow.Stave(10, 0, 500);
 stave.addClef("treble").setContext(ctx).draw();
 
+
+
+
 var createNote = function () {
 
 }
@@ -47,8 +50,7 @@ var playNote = function(delay, pitch, duration){
     oscillator.type = 'sawtooth';
     oscillator.detune.value = pitch * 100;
 
-    oscillator.s
-    tart(startTime);
+    oscillator.start(startTime);
     oscillator.stop(endTime);
   };
 
@@ -73,45 +75,6 @@ var playNote = function(delay, pitch, duration){
 
 // This code will play a music file
 var foo=new Sound("my.mp3",100,true);
-
-var playKeydown= function(event){
-  if ( event.which === A_KEY ) {
-    event.preventDefault();
-    noteLowC();
-  }
-  if ( event.which === S_KEY ) {
-    event.preventDefault();
-    noteD();
-  }
-  if ( event.which === D_KEY ) {
-    event.preventDefault();
-    noteE();
-  }
-  if ( event.which === F_KEY ) {
-    event.preventDefault();
-    noteF();
-  }
-  if ( event.which === G_KEY ) {
-    event.preventDefault();
-    noteG();
-  }
-  if ( event.which === H_KEY ) {
-    event.preventDefault();
-    noteA();
-  }
-  if ( event.which === J_KEY ) {
-    event.preventDefault();
-    noteB();
-  }
-  if ( event.which === K_KEY ) {
-    event.preventDefault();
-    noteTopC();
-  }
-  if ( event.which === L_KEY ) {
-    event.preventDefault();
-    foo.start();
-  }
-}
 
 // Create the notes
   var notes = [
@@ -147,8 +110,6 @@ console.log(notes);
 
 })
 
-
-
   // Create a voice in 4/4
   var voice = new Vex.Flow.Voice({
     num_beats: 4,
@@ -156,7 +117,6 @@ console.log(notes);
     resolution: Vex.Flow.RESOLUTION
   });
 
-var beam = new Vex.Flow.Beam(notes);
 
     // var oscillator = audioContext.createOscillator()
     // oscillator.connect(audioContext.destination)
