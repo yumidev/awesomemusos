@@ -1,5 +1,37 @@
 
 console.log("hello music maker");
+  var notes=[[0,0]];
+
+  var fill = [];
+
+  var fillArray = function (notes, prevNotesLength, event){
+    // debugger;
+    var noteLengthNow= notes.length;
+    console.log("fillArray working");
+    var a;
+    if (noteLengthNow !== prevNotesLength){
+      // debugger;
+      a = _.last(notes)
+    } else {
+      a = 0;
+    }
+  fill.push([a,0.5])
+  console.log(fill);
+  }
+  var fillArrayTimer;
+  var startFilling = function(notes, event){
+    // debugger;
+    var prevNotesLength = notes.length
+console.log("Prev Notes are" + prevNotesLength);
+    console.log("filling started");
+    fillArrayTimer = setInterval(function(){fillArray(notes, prevNotesLength, event)}, 1000);
+  }
+
+  var stopFilling = function(){
+    console.log("filling finished");
+    clearInterval(fillArrayTimer)
+  }
+
 
 var audioContext = new AudioContext();
 //This plays a small tune when the browser starts.  It executes immediately.  I can't figure out how to get it to execute on click.
@@ -77,8 +109,8 @@ var noteTopC = function (){
 
   $(document).on("keydown", function ( event ) {
     // debugger;
-    // notes.push(event.which)
-  console.log(notes);
+    notes.push(event.which)
+    console.log(notes);
     A_KEY = 65;
     S_KEY = 83;
     D_KEY = 68;
