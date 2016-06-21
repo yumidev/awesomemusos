@@ -30,7 +30,8 @@ var playNote = function(delay, pitch, duration){
     oscillator.type = 'sawtooth';
     oscillator.detune.value = pitch * 100;
 
-    oscillator.start(startTime);
+    oscillator.s
+    tart(startTime);
     oscillator.stop(endTime);
   };
 
