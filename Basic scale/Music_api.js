@@ -109,16 +109,16 @@ var noteTopC = function (){
 
 // var tune = function(){
 
-    // playNote(0, 3, 0.5);
-    // playNote(1, 10, 0.5);
-    // playNote(2, 15, 0.5);
-    // playNote(3, 19, 0.5);
-    // playNote(3, 15, 0.5);
-    // playNote(4, 3, 0.5);
-    // playNote(5, 10, 0.5);
-    // playNote(6, 15, 0.5);
-    // playNote(6, 19, 0.5);
-    // playNote(7, 15, 0.5);
+    playNote(0, 3, 0.5);
+    playNote(1, 10, 0.5);
+    playNote(2, 15, 0.5);
+    playNote(3, 19, 0.5);
+    playNote(3, 15, 0.5);
+    playNote(4, 3, 0.5);
+    playNote(5, 10, 0.5);
+    playNote(6, 15, 0.5);
+    playNote(6, 19, 0.5);
+    playNote(7, 15, 0.5);
     // // playNote;
   // };
 
