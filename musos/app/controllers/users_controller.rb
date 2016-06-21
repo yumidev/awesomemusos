@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorise, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    redirect_to root_path
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by :id => params[:id]
   end
 
   # GET /users/new
@@ -56,7 +58,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,13 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password_digest)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+
+    def authorise
+      # Unless someone is logged in, take every request back to the login page.
+      flash[:error] = "You need to be logged in for that" unless @current_user.present?
+      redirect_to root_path unless @current_user.present?
     end
 end
