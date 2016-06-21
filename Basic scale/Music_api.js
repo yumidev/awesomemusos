@@ -35,61 +35,6 @@ var playNote = function(delay, pitch, duration){
   };
 
 
-  var noteLowC = function (){
-    playNote(0, 3, 0.5);
-  };
-  var noteCSharp = function (){
-    playNote(0, 4, 0.5);
-  };
-
-  var noteD = function (){
-    playNote(0, 5, 0.5);
-  };
-
-  var noteEFlat = function (){
-    playNote(0, 6, 0.5);
-  };
-
-  var noteE = function (){
-    playNote(0, 7, 0.5);
-  };
-
-  var noteF = function (){
-    playNote(0, 8, 0.5);
-  };
-
-  var noteFSharp = function (){
-    playNote(0, 9, 0.5);
-  };
-
-
-  var noteG = function (){
-    playNote(0, 10, 0.5);
-  };
-
-  var noteGSharp = function (){
-    playNote(0, 11, 0.5);
-  };
-
-  var noteA = function (){
-    playNote(0, 12, 0.5);
-  };
-
-  var noteGSharp = function (){
-    playNote(0, 11, 0.5);
-  };
-
-  var noteBFlat = function (){
-    playNote(0, 13, 0.5);
-  };
-
-  var noteB = function (){
-    playNote(0, 14, 0.5);
-  };
-
-  var noteTopC = function (){
-    playNote(0, 15, 0.5);
-  };
 
 //This code will play a small tune
 //
@@ -109,76 +54,40 @@ var playNote = function(delay, pitch, duration){
 //   };
 
 // This code will play a music file
-  function Sound(source,volume,loop)
-  {
-      this.source=source;
-      this.volume=volume;
-      this.loop=loop;
-      var son;
-      this.son=son;
-      this.finish=false;
-      this.stop=function()
-      {
-          document.body.removeChild(this.son);
-      }
-      this.start=function()
-      {
-          if(this.finish)return false;
-          this.son=document.createElement("embed");
-          this.son.setAttribute("src",this.source);
-          this.son.setAttribute("hidden","true");
-          this.son.setAttribute("volume",this.volume);
-          this.son.setAttribute("autostart","true");
-          this.son.setAttribute("loop",this.loop);
-          document.body.appendChild(this.son);
-      }
-      this.remove=function()
-      {
-          document.body.removeChild(this.son);
-          this.finish=true;
-      }
-      this.init=function(volume,loop)
-      {
-          this.finish=false;
-          this.volume=volume;
-          this.loop=loop;
-      }
-  }
-
 var foo=new Sound("my.mp3",100,true);
 
 var playKeydown= function(event){
   if ( event.which === A_KEY ) {
     event.preventDefault();
-    playNote(0, 3, 0.5)
+    noteLowC();
   }
   if ( event.which === S_KEY ) {
     event.preventDefault();
-    playNote(0, 5, 0.5)
+    noteD();
   }
   if ( event.which === D_KEY ) {
     event.preventDefault();
-    playNote(0, 7, 0.5)
+    noteE();
   }
   if ( event.which === F_KEY ) {
     event.preventDefault();
-    playNote(0, 8, 0.5)
+    noteF();
   }
   if ( event.which === G_KEY ) {
     event.preventDefault();
-    playNote(0, 10, 0.5)
+    noteG();
   }
   if ( event.which === H_KEY ) {
     event.preventDefault();
-    playNote(0, 12, 0.5)
+    noteA();
   }
   if ( event.which === J_KEY ) {
     event.preventDefault();
-    playNote(0, 14, 0.5)
+    noteB();
   }
   if ( event.which === K_KEY ) {
     event.preventDefault();
-    playNote(0, 15, 0.5)
+    noteTopC();
   }
   if ( event.which === L_KEY ) {
     event.preventDefault();
