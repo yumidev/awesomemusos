@@ -19,37 +19,102 @@ var sing;
     // playNote(2, 15, 0.5);
     // playNote(2.5, 3, 0.5);
 
-  var notes=[[0,0]];
+// var notes=[[0,0]];
+// var prevNotesLength = notes.length;
 
-  var fill = [];
+$(document).on("keydown", function ( event ) {
+  // debugger;
+  // var prevNotesLength = notes.length
 
-  var fillArray = function (notes, prevNotesLength, event){
-    // debugger;
-    var noteLengthNow= notes.length;
+//   if (noteLengthNow !== prevNotesLength){
+//     var noteRef = {
+//       65: 3,
+//       83: 5,
+//       68: 7,
+//       70: 8,
+//       71: 10,
+//       72: 12,
+//       74: 14,
+//       75: 15,
+//       76: 3
+//     }
+//     a = noteRef[_.last(notes)]
+//   } else {
+//     a = 0;
+//   }
+// fill.push([0, 0.5])
+var noteRef = {
+  65: 3,
+  83: 5,
+  68: 7,
+  70: 8,
+  71: 10,
+  72: 12,
+  74: 14,
+  75: 15,
+  76: 3
+}
+var keyCode = event.which
+var pitch = noteRef[keyCode]
+// debugger;
+  fill.push([pitch,0.5])
+  // notes.push(event.which)
+  console.log(notes);
+  A_KEY = 65;
+  S_KEY = 83;
+  D_KEY = 68;
+  F_KEY = 70;
+  G_KEY = 71;
+  H_KEY = 72;
+  J_KEY = 74;
+  K_KEY = 75;
+  L_KEY = 76;
+
+  playKeydown(event);
+  // return prevNotesLength;
+})
+
+
+var fill = [];
+
+var fillArray = function (){
+  // console.log("This is previous length");
+  // debugger;
+  // var noteLengthNow= notes.length;
     console.log("fillArray working");
     var a;
-    if (noteLengthNow !== prevNotesLength){
-      // debugger;
-      a = _.last(notes)
-    } else {
-      a = 0;
-    }
-  fill.push([a,0.5])
+    // if (noteLengthNow !== prevNotesLength){
+    //   var noteRef = {
+    //     65: 3,
+    //     83: 5,
+    //     68: 7,
+    //     70: 8,
+    //     71: 10,
+    //     72: 12,
+    //     74: 14,
+    //     75: 15,
+    //     76: 3
+    //   }
+    //   a = noteRef[_.last(notes)]
+    // } else {
+    //   a = 0;
+    // }
+  fill.push([0, 0.5])
   console.log(fill);
-  }
-  var fillArrayTimer;
-  var startFilling = function(notes, event){
-    // debugger;
-    var prevNotesLength = notes.length
-console.log("Prev Notes are" + prevNotesLength);
-    console.log("filling started");
-    fillArrayTimer = setInterval(function(){fillArray(notes, prevNotesLength, event)}, 1000);
-  }
+}
+var fillArrayTimer;
 
-  var stopFilling = function(){
-    console.log("filling finished");
-    clearInterval(fillArrayTimer)
-  }
+
+var startFilling = function(notes, event){
+  console.log("filling started");
+  // debugger;
+  fillArrayTimer = setInterval(function(){fillArray()}, 500);
+}
+
+var stopFilling = function(){
+  console.log("filling finished");
+  clearInterval(fillArrayTimer)
+}
 
 
 var audioContext = new AudioContext();
@@ -133,25 +198,7 @@ var noteTopC = function (){
 };
 
 
-  $(document).on("keydown", function ( event ) {
-    // debugger;
-    notes.push(event.which)
-    console.log(notes);
-    A_KEY = 65;
-    S_KEY = 83;
-    D_KEY = 68;
-    F_KEY = 70;
-    G_KEY = 71;
-    H_KEY = 72;
-    J_KEY = 74;
-    K_KEY = 75;
-    L_KEY = 76;
-
-    playKeydown(event);
-
-  })
-
-  var playKeydown= function(event){
+  var playKeydown= function(event, prevNotesLength){
     if ( event.which === A_KEY ) {
       event.preventDefault();
       noteLowC();
