@@ -12,10 +12,10 @@ app.SongInputView = Backbone.View.extend({
   //   fill.push([0, 0.1])
   //   console.log(fill);
   // }
-  var startFilling = function(notes, event){
-    console.log("filling started");
-    fillArrayTimer = setInterval(function(){fillArray()}, 100);
-  },
+  // var startFilling = function(notes, event){
+  //   console.log("filling started");
+  //   fillArrayTimer = setInterval(function(){fillArray()}, 100);
+  // },
   // var stopFilling = function(){
   //   console.log("filling finished");
   //   clearInterval(fillArrayTimer)
