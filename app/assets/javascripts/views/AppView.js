@@ -1,8 +1,21 @@
 var app = app || {};
 var fill = [];
 var fillArrayTimer;
+var time = 0
 
-var saveSong = function (  ) {
+// var delay = 0;
+// if (fill[i][0] === null) {
+//   delay += fill[i][1]
+// } else {
+//   playNote(delay, fill[i][0], fill[i][1])
+//   delay = 0;
+// }
+
+var newSong = function () {
+
+}
+
+var saveSong = function () {
   debugger;
   console.log("Let's save our lovely song");
   var song = new app.Song();
@@ -19,13 +32,7 @@ var saveSong = function (  ) {
 
 var playSong = function () {
   for(var i=0;i<fill.length;i+=1){
-    var delay = 0;
-    if (fill[i][0] === null) {
-      delay += fill[i][1]
-    } else {
-      playNote(i/10 + delay,fill[i][0],fill[i][1])
-      delay = 0;
-    }
+    playNote(fill[i][0], fill[i][1], fill[i][2])
   }
 }
 
@@ -44,12 +51,14 @@ var catchKeydown = function ( event ) {
   }
   var keyCode = event.which
   var pitch = noteRef[keyCode]
-  fill.push([pitch,0.1])
+  fill.push([time, pitch, 0.1])
 }
 
 var fillArray = function () {
-  fill.push([null, 0.1])
-  console.log(fill);
+  time += 0.1
+console.log(time);
+  // fill.push([null, 0.1])
+  // console.log(fill);
 }
 
 var startFilling = function (event) {
