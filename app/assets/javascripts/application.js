@@ -15,9 +15,4 @@
 //= require underscore
 //= require backbone
 //= require turbolinks
-//= require noteSound
-//= require music_api
-
-
-
 //= require_tree .
