@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: songs
+#
+#  id         :integer          not null, primary key
+#  name       :text
+#  date       :datetime
+#  project_id :integer
+#  song_notes :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  date: 2016-06-21 19:36:16
+  project_id: 1
+  song_notes: MyText
+
+two:
+  name: MyText
+  date: 2016-06-21 19:36:16
+  project_id: 1
+  song_notes: MyText
