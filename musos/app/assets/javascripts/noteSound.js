@@ -130,4 +130,4 @@ var noteTopC = function (){
       event.preventDefault();
       foo.start();
     }
-  }
+  };

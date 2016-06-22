@@ -1,3 +1,6 @@
+//we need to tie this to what page they are on
+
+
 var playKeydown= function(event){
   if ( event.which === A_KEY ) {
     event.preventDefault();
@@ -35,4 +38,4 @@ var playKeydown= function(event){
     event.preventDefault();
     foo.start();
   }
-}
+};
