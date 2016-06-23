@@ -1,0 +1,16 @@
+body {
+
+  background-color: aliceblue;
+
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+}
