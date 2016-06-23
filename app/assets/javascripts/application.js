@@ -14,8 +14,4 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-<<<<<<< HEAD
-=======
-
->>>>>>> b861e4b39ced89043d12bb7004f92aa131471090
 //= require_tree .
