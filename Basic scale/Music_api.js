@@ -70,6 +70,8 @@ var playNote = function(delay, pitch, duration){
 // This code will play a music file
 var foo=new Sound("my.mp3",100,true);
 
+var violinC = new Sound("violinLowC",100, true);
+
 // Create the notes
   var notes = [
     // A quarter-note C.
