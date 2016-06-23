@@ -1,38 +1,31 @@
 var app = app || {};
-var fill = [];
-var fillArrayTimer;
+var note = [];
+var noteTimer;
 var time = 0
 
-// var delay = 0;
-// if (fill[i][0] === null) {
-//   delay += fill[i][1]
-// } else {
-//   playNote(delay, fill[i][0], fill[i][1])
-//   delay = 0;
-// }
-
 var newSong = function () {
-
+  note = [];
+  time = 0;
 }
 
 var saveSong = function () {
-  debugger;
+  // debugger;
   console.log("Let's save our lovely song");
   var song = new app.Song();
-  var songName // this should be written when you click the songSave. like.. prompt?
+  var songName = prompt("Please enter the song title", "")// this should be written when you click the songSave. like.. prompt?
   var project_id; // this should be chosen when you create project
-  var song_notes = JSON.stringify(fill); // this should get the array of fill.. how??
+  var stringNotes = JSON.stringify(note); // this should get the array of note.. how??
   song.set({
     name: songName,
     project_id: project_id,
-    song_notes: stringSong
+    song_notes: stringNotes
   })
   song.save();
 }
 
 var playSong = function () {
-  for(var i=0;i<fill.length;i+=1){
-    playNote(fill[i][0], fill[i][1], fill[i][2])
+  for(var i=0;i<note.length;i+=1){
+    playNote(note[i][0], note[i][1], note[i][2])
   }
 }
 
@@ -50,26 +43,29 @@ var catchKeydown = function ( event ) {
     76: 3
   }
   var keyCode = event.which
-  var pitch = noteRef[keyCode]
-  fill.push([time, pitch, 0.1])
+    var pitch = noteRef[keyCode]
+    if ( pitch !== undefined ){
+      note.push([time, pitch, 0.1])
+    }
+  var noteView = new app.NoteView();
+  noteView.render();
 }
 
-var fillArray = function () {
+var noteArray = function () {
   time += 0.1
-console.log(time);
-  // fill.push([null, 0.1])
-  // console.log(fill);
+  console.log(time);
+  console.log(note);
 }
 
 var startFilling = function (event) {
-  console.log("filling started");
-  fillArrayTimer = setInterval(function(){fillArray()}, 100);
+  console.log("Noting started");
+  noteTimer = setInterval(function(){noteArray()}, 100);
   $(document).on("keydown", catchKeydown);
 }
 
 var stopFilling = function(){
-  console.log("filling finished");
-  clearInterval(fillArrayTimer)
+  console.log("Noting finished");
+  clearInterval(noteTimer)
 }
 
 var playKeydown = function ( event ) {
@@ -82,6 +78,7 @@ var playKeydown = function ( event ) {
   app.J_KEY = 74;
   app.K_KEY = 75;
   app.L_KEY = 76;
+  app.SPACE_KEY = 32;
   if ( event.which === app.A_KEY ) {
     event.preventDefault();
     noteLowC();
@@ -118,6 +115,10 @@ var playKeydown = function ( event ) {
     event.preventDefault();
     foo.start();
   }
+  if ( event.which === app.SPACE_KEY ) {
+    event.preventDefault();
+    stopFilling();
+  }
 }
 
 app.AppView = Backbone.View.extend({
@@ -131,10 +132,13 @@ app.AppView = Backbone.View.extend({
     songInputView.render();
     var recordButtonView = new app.RecordButtonView();
     recordButtonView.render();
+    var noteView = new app.NoteView();
+    noteView.render();
     $(document).on("keydown", playKeydown);
     $("#recordStart").on("click", startFilling);
     $("#recordEnd").on("click", stopFilling);
     $("#playSong").on("click", playSong);
     $("#saveSong").on("click", saveSong);
+    $("#newSong").on("click", newSong);
   }
 })
