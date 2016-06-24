@@ -22,6 +22,7 @@
     <button onclick="noteTopC()">Play a C</button>
 
 
+    <div>
     <h2>Play violin<h2>
 
 
@@ -33,6 +34,47 @@
         <button onclick="violinA.start()">Play an A</button>
         <button onclick="violinB.start()">Play a B</button>
         <button onclick="violinTopC.start()">Play a C</button>
+
+        </div>
+
+        <br>
+
+        <br>
+
+
+        <h2>Play cello<h2>
+
+
+            <button onclick="celloLowC.start()">Play a C</button>
+            <button onclick="celloD.start()">Play a D</button>
+            <button onclick="celloE.start()">Play an E </button>
+            <button onclick="celloF.start()">Play an F</button>
+            <button onclick="celloG.start()">Play a G</button>
+            <button onclick="celloA.start()">Play an A</button>
+            <button onclick="celloB.start()">Play a B</button>
+            <button onclick="celloTopC.start()">Play a C</button>
+
+            </div>
+
+<br>
+
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Choose sound</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Synthesiser</a>
+    <a href="#about">Violin</a>
+    <a href="#contact">Cello</a>
+  </div>
+</div>
+
+  <h2>Notes visuals</h2>
+
+
+        <button id="C">C note</button>
 
 
 
@@ -97,7 +139,7 @@
     <script src="jquery.js"></script>
     <script src="noteSound.js"></script>
     <script src="playFile.js"></script>
-    <script src="node_modules/vexflow/releases/vexflow-min.js"></script>
+    <!-- <script src="node_modules/vexflow/releases/vexflow-min.js"></script> -->
     <script src="playKeydown.js"></script>
     <script src="Music_api.js"></script>
 

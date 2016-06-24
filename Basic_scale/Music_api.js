@@ -1,7 +1,10 @@
+$(document).ready
+
+
 // // Before we can do anything we need to create an AudioContext. This is a global object that is available in most modern browsers on any webpage.
 //
 // create the big object
-// var audioContext = new AudioContext();
+var audioContext = new AudioContext();
 //
 //
 // create an instance of it and tell it what to do with it
@@ -28,7 +31,7 @@
 
 // var bindingKeyToNote = function (event) {
 //
-//   notes.push()
+  // notes.push();
 
 console.log("hello music maker");
 
@@ -82,11 +85,66 @@ var violinTopC = new Sound("audio_violin/violin_C5.mp3", 100, false);
 
 
 
+//cello notes defined
+var celloLowC = new Sound("audio_cello/cello_C3.mp3", 100, false);
+var celloD = new Sound("audio_cello/cello_D3.mp3", 100, false);
+var celloE = new Sound("audio_cello/cello_E3.mp3", 100, false);
+var celloF = new Sound("audio_cello/cello_F3.mp3", 100, false);
+var celloG = new Sound("audio_cello/cello_G3.mp3", 100, false);
+var celloA = new Sound("audio_cello/cello_A3.mp3", 100, false);
+var celloB = new Sound("audio_cello/cello_B3.mp3", 100, false);
+var celloTopC = new Sound("audio_cello/cello_C4.mp3", 100, false);
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
-// var violinLowC = new Sound("violinLowC.mp3",100,true);
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+//Need to
+
+
+
+// var celloLowC = new Sound("violinLowC.mp3",100,true);
 
 
 // "audio/violinLowC.mp3"
@@ -109,7 +167,7 @@ var violinTopC = new Sound("audio_violin/violin_C5.mp3", 100, false);
 
 $(document).on("keydown", function ( event ) {
   // debugger;
-  notes.push(event.which)
+  // notes.push(event.which);
 console.log(notes);
   A_KEY = 65;
   S_KEY = 83;
