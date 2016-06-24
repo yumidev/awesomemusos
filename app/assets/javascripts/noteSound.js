@@ -67,7 +67,7 @@ var playNote = function(delay, pitch, duration){
   var oscillator = audioContext.createOscillator();
   oscillator.connect(audioContext.destination);
 
-  oscillator.type = 'sawtooth';
+  oscillator.type = 'triangle';
   oscillator.detune.value = pitch * 100;
 
   oscillator.start(startTime);

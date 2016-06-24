@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    binding.pry
+
     @user = User.find_by :id => params[:id]
   end
 
@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  @user = User.find_by :id => params[:id]
+
   end
 
   # POST /users

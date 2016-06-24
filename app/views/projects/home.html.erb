@@ -1,102 +1,62 @@
 <!doctype html>
 <html>
 
-<head>
-    <title>Awesmome musos </title>
-</head>
+    <head></head>
 
-<body>
+    <body class="body-bg">
+        <div class="container">
 
-<div id="main"></div>
+            <div id="main"></div>
+            <script id="appViewTemplate" type="html/template">
+                <div id="keyboard" class="text-center"></div>
+                <div id="recordButton"></div>
+            </script>
 
-<script id="appViewTemplate" type="html/template">
-  <h1>Play, Record, Enjoy your song</h1>
+            <script id="recordButtonViewTemplate" type="html/template">
+                <div class="row">
+                    <div class="col-xs-12 text-center margin-top-24">
+                        <button id="recordStart" class="btn btn-lg btn-primary">Start</button>
+                        <button id="recordEnd" class="btn btn-lg btn-primary">Stop</button>
+                        <button id="playSong" class="btn btn-lg btn-primary">Listen</button>
+                        <button id="saveSong" class="btn btn-lg btn-primary">Save</button>
+                    </div>
+                </div>
+            </script>
 
-  <div id="keyboard"></div>
-
-  <div id="recordButton"></div>
-
-</script>
-
-<script id="recordButtonViewTemplate" type="html/template">
-<h2>If you want to record your song</h2>
-  <button id="recordStart">Start</button>
-  <button id="recordEnd">Stop</button>
-  <button id="playSong">Listen</button>
-  <button id="saveSong">Save</button>
-
-</script>
-
-<script id="songInputViewTemplate" type="html/template">
-  <h1>Awesome musos using web API</h1>
-
-  <h2>Play a major scale</h2>
-
-  <button onclick="noteLowC()">Play a C</button>
-  <button onclick="noteD()">Play a D</button>
-  <button onclick="noteE()">Play an E</button>
-  <button onclick="noteF()">Play a F</button>
-  <button onclick="noteG()">Play a G</button>
-  <button onclick="noteA()">Play an A </button>
-  <button onclick="noteB()">Play a B</button>
-  <button onclick="noteTopC()">Play a C</button>
-
-
-  <h2>Play a minor scale</h2>
-
-
-  <button onclick="noteLowC()">Play a C</button>
-  <button onclick="noteD()">Play a D</button>
-  <button onclick="noteEFlat()">Play an E flat</button>
-  <button onclick="noteF()">Play a F</button>
-  <button onclick="noteG()">Play a G</button>
-  <button onclick="noteGsharp()">Play an A flat</button>
-  <button onclick="noteB()">Play a B</button>
-  <button onclick="noteTopC()">Play a C</button>
-
-
-
-
-  <h3>Notes for a piano octave</h3>
-  <button onclick="noteLowC()">Play a C</button>
-  <button onclick="noteCSharp()" ;>Play a C#</button>
-  <button onclick="noteD()" ;>Play a D</button>
-  <button onclick="noteEFlat()" ;>Play a D# flat</button>
-  <button onclick="noteE()" ;>Play a E</button>
-  <button onclick="noteF()" ;>Play a F</button>
-  <button onclick="noteFSharp()" ;>Play a F#</button>
-  <button onclick="noteG()">Play a G</button>
-  <button onclick="noteGSharp()">Play a G#</button>
-  <button onclick="noteA()">Play an A</button>
-  <button onclick="noteBFlat()" ;>Play an B flat</button>
-  <button onclick="noteB()">Play a B</button>
-  <button onclick="noteTopC()" ;>Play a C</button>
-
-
-  <h3>Notes for a piano octave  top line is the black notes </h3>
-
-
-  <button onclick="noteCSharp()">Play a C#</button>
-  <button onclick="noteEFlat()">Play a D# flat</button>
-  <button onclick="noteFSharp()" ;>Play a F#</button>
-  <button onclick="noteGSharp()" ;>Play a G#</button>
-  <button onclick="noteBFlat()">Play an B flat</button>
-
-  <br>
-
-  <button onclick="noteLowC()">Play a C</button>
-  <button onclick="noteD()" >Play a D</button>
-  <button onclick="noteE()">Play a E</button>
-  <button onclick="noteF()">Play a F</button>
-  <button onclick="noteG()">Play a G</button>
-  <button onclick="noteA()">Play an A</button>
-  <button onclick="noteB()">Play a B</button>
-  <button onclick="noteTopC()">Play a C</button>
-</script>
-
-
-    <canvas width=700 height=100></canvas>
-
-</body>
+            <script id="songInputViewTemplate" type="html/template">
+                <div class="row">
+                    <div class="col-xs-24 text-center">
+                        <div class="text-center margin-top">
+                            <div class="key">c<br>
+                                <span>a</span>
+                            </div>
+                            <div class="key">D<br>
+                                <span>s</span>
+                            </div>
+                            <div class="key">E<br>
+                                <span>d</span>
+                            </div>
+                            <div class="key">F<br>
+                                <span>f</span>
+                            </div>
+                            <div class="key">G<br>
+                                <span>g</span>
+                            </div>
+                            <div class="key">A<br>
+                                <span>h</span>
+                            </div>
+                            <div class="key">B<br>
+                                <span>j</span>
+                            </div>
+                            <div class="key">C<br>
+                                <span>k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+            <!-- <canvas width=700 height=100></canvas> -->
+        </div>
+    </body>
 
 </html>

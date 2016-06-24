@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-4">
+            <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
+            <p>
+                <strong>Name:</strong>
+                <%= @song.name %>
+            </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @song.date %>
-</p>
+            <p>
+                <strong>Date:</strong>
+                <%= @song.date %>
+            </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @song.project_id %>
-</p>
+            <p>
+                <strong>Project:</strong>
+                <%= @song.project_id %>
+            </p>
 
-<p>
-  <strong>Song notes:</strong>
-  <%= @song.song_notes %>
-</p>
+            <p>
+                <strong>Song notes:</strong>
+                <%= @song.song_notes %>
+            </p>
+        </div>
+    </div>
+</div>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Edit', edit_song_path(@song) %>
+|
 <%= link_to 'Back', songs_path %>

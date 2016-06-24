@@ -1,17 +1,92 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background-color: aliceblue;
-  text-align: center;
+
+// body {
+//   background-color: aliceblue;
+//   text-align: center;
+// }
+//
+// button {
+//   display: inline-block;
+//   margin: 0 10px 0 0;
+//   padding: 10px 20px;
+//   font-size: 15px;
+//   font-family: "Bitter",serif;
+//   line-height: 1.8;
+//   appearance: none;
+// }
+* {
+    box-sizing: border-box;
 }
 
-button {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 10px 20px;
-  font-size: 15px;
-  font-family: "Bitter",serif;
-  line-height: 1.8;
-  appearance: none;
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+.body-bg{
+  background: #222;
+}
+select {
+    font-size: 30px;
+}
+
+p {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 5px;
+}
+
+#keyboard {
+    width: 100%;
+    overflow: hidden;
+}
+
+.key {
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 10%;
+    margin: 0 0.5%;
+    width: 10%;
+    padding: 35px 0;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: margin 150ms ease-in-out;
+    font-weight: bold;
+}
+
+.key span {
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    background: #ccc;
+    border-radius: 0.4rem;
+}
+
+.playing {
+    background: #ddd;
+    margin-top: 20px;
+}
+.navbar-nav{
+  a{
+    font-size: 14px;
+  }
+}
+
+.margin-top-12{
+  margin-top: 12px;
+}
+.margin-top-18{
+  margin-top: 18px;
+}
+.margin-top-24{
+  margin-top: 24px;
+}
+
+table {
+  border: 1px solid red;
+  background-color: yellow;
 }

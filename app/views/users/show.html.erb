@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
-<h1>This should show the image of the user</h1>
-<p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <p id="notice"><%= notice %></p>
+            <h1>Hello
+                <%= @user.name %>!</h1>
+            <!-- <p>
   <strong>Image:</strong>
   <%= @user.image %>
-</p>
+</p> -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+            <p>
+                <strong>Name:</strong>
+                <%= @user.name %>
+            </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+            <p>
+                <strong>Email:</strong>
+                <%= @user.email %>
+            </p>
+            <p>
+            <%= link_to 'Edit', edit_user_path(@user) %>
+            |
+            <%= link_to 'Back', users_path %>
+          </p>
+        </div>
+    </div>
+</div>

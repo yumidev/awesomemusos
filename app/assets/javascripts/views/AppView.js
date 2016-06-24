@@ -16,16 +16,16 @@ var newSong = function () {
 }
 
 var saveSong = function () {
-  debugger;
+
   console.log("Let's save our lovely song");
   var song = new app.Song();
   var songName // this should be written when you click the songSave. like.. prompt?
   var project_id; // this should be chosen when you create project
-  var song_notes = JSON.stringify(fill); // this should get the array of fill.. how??
+  var stringNotes = JSON.stringify(fill); // this should get the array of fill.. how??
   song.set({
     name: songName,
     project_id: project_id,
-    song_notes: stringSong
+    song_notes: stringNotes
   })
   song.save();
 }

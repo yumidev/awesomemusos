@@ -1,4 +1,5 @@
-/** {
+
+* {
     box-sizing: border-box;
 }
 
@@ -7,9 +8,12 @@ html {
 }
 
 body {
-    font-size: 30px;
     font-family: Arial, sans-serif;
-    background: #222;
+    background: #fff;
+}
+
+.body-bg{
+  background: #222;
 }
 
 select {
@@ -25,7 +29,6 @@ p {
 #keyboard {
     width: 100%;
     overflow: hidden;
-
 }
 
 .key {
@@ -33,10 +36,10 @@ p {
     background: #fff;
     border-radius: 10%;
     margin: 0 0.5%;
-    width: 9%;
+    width: 10%;
     padding: 35px 0;
     text-align: center;
-    float: left;
+    display: inline-block;
     text-transform: uppercase;
     transition: margin 150ms ease-in-out;
     font-weight: bold;
@@ -54,4 +57,23 @@ p {
 .playing {
     background: #ddd;
     margin-top: 20px;
-}*/
+}
+
+.navbar-nav a {
+    font-size: 14px;
+}
+
+.margin-top-12{
+  margin-top: 12px;
+}
+.margin-top-18{
+  margin-top: 18px;
+}
+.margin-top-24{
+  margin-top: 24px;
+}
+
+table {
+  border: 1px solid red;
+  background-color: yellow;
+}

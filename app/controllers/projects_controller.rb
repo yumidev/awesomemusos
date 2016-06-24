@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project = Project.find_by :id => params[:id]
+
   end
 
   # GET /projects/new
@@ -25,6 +27,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    # redirect_to projects_path
 
     respond_to do |format|
       if @project.save
