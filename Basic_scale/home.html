@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Awesmome musos </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Awesome musos using web API</h1>
+
+    <h2>Play a major scale</h2>
+
+
+    <button onclick="noteLowC()">Play a C</button>
+    <button onclick="noteD()">Play a D</button>
+    <button onclick="noteE()">Play an E</button>
+    <button onclick="noteF()">Play a F</button>
+    <button onclick="noteG()">Play a G</button>
+    <button onclick="noteA()">Play an A </button>
+    <button onclick="noteB()">Play a B</button>
+    <button onclick="noteTopC()">Play a C</button>
+
+
+    <div>
+    <h2>Play violin<h2>
+
+
+        <button onclick="violinLowC.start()">Play a C</button>
+        <button onclick="violinD.start()">Play a D</button>
+        <button onclick="violinE.start()">Play an E </button>
+        <button onclick="violinF.start()">Play an F</button>
+        <button onclick="violinG.start()">Play a G</button>
+        <button onclick="violinA.start()">Play an A</button>
+        <button onclick="violinB.start()">Play a B</button>
+        <button onclick="violinTopC.start()">Play a C</button>
+
+        </div>
+
+        <br>
+
+        <br>
+
+
+        <h2>Play cello<h2>
+
+
+            <button onclick="celloLowC.start()">Play a C</button>
+            <button onclick="celloD.start()">Play a D</button>
+            <button onclick="celloE.start()">Play an E </button>
+            <button onclick="celloF.start()">Play an F</button>
+            <button onclick="celloG.start()">Play a G</button>
+            <button onclick="celloA.start()">Play an A</button>
+            <button onclick="celloB.start()">Play a B</button>
+            <button onclick="celloTopC.start()">Play a C</button>
+
+            </div>
+
+<br>
+
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Choose sound</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Synthesiser</a>
+    <a href="#about">Violin</a>
+    <a href="#contact">Cello</a>
+  </div>
+</div>
+
+  <h2>Notes visuals</h2>
+
+
+        <button id="C">C note</button>
+
+
+
+
+
+    <h2>Play a minor scale</h2>
+
+
+    <button onclick="noteLowC()">Play a C</button>
+    <button onclick="noteD()">Play a D</button>
+    <button onclick="noteEFlat()">Play an E flat</button>
+    <button onclick="noteF()">Play a F</button>
+    <button onclick="noteG()">Play a G</button>
+    <button onclick="noteGsharp()">Play an A flat</button>
+    <button onclick="noteB()">Play a B</button>
+    <button onclick="noteTopC()">Play a C</button>
+
+
+
+
+
+    <h3>Notes for a piano octave</h3>
+    <button onclick="noteLowC()">Play a C</button>
+    <button onclick="noteCSharp()" ;>Play a C#</button>
+    <button onclick="noteD()" ;>Play a D</button>
+    <button onclick="noteEFlat()" ;>Play a D# flat</button>
+    <button onclick="noteE()" ;>Play a E</button>
+    <button onclick="noteF()" ;>Play a F</button>
+    <button onclick="noteFSharp()" ;>Play a F#</button>
+    <button onclick="noteG()">Play a G</button>
+    <button onclick="noteGSharp()">Play a G#</button>
+    <button onclick="noteA()">Play an A</button>
+    <button onclick="noteBFlat()" ;>Play an B flat</button>
+    <button onclick="noteB()">Play a B</button>
+    <button onclick="noteTopC()" ;>Play a C</button>
+
+
+    <h3>Notes for a piano octave  top line is the black notes </h3>
+
+
+    <button onclick="noteCSharp()">Play a C#</button>
+    <button onclick="noteEFlat()">Play a D# flat</button>
+    <button onclick="noteFSharp()" ;>Play a F#</button>
+    <button onclick="noteGSharp()" ;>Play a G#</button>
+    <button onclick="noteBFlat()">Play an B flat</button>
+
+    <br>
+
+    <button onclick="noteLowC()">Play a C</button>
+    <button onclick="noteD()" >Play a D</button>
+    <button onclick="noteE()">Play a E</button>
+    <button onclick="noteF()">Play a F</button>
+    <button onclick="noteG()">Play a G</button>
+    <button onclick="noteA()">Play an A</button>
+    <button onclick="noteB()">Play a B</button>
+    <button onclick="noteTopC()">Play a C</button>
+
+
+    <canvas width=700 height=100></canvas>
+
+
+    <script src="jquery.js"></script>
+    <script src="noteSound.js"></script>
+    <script src="playFile.js"></script>
+    <!-- <script src="node_modules/vexflow/releases/vexflow-min.js"></script> -->
+    <script src="playKeydown.js"></script>
+    <script src="Music_api.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Awesmome musos </title>
+</head>
+
+<body>
+
+<div id="main"></div>
+
+<script id="appViewTemplate" type="html/template">
+  <h1>Play, Record, Enjoy your song</h1>
+
+  <div id="keyboard"></div>
+
+  <div id="recordButton"></div>
+
+</script>
+
+<script id="recordButtonViewTemplate" type="html/template">
+<h2>If you want to record your song</h2>
+  <button id="recordStart">Start</button>
+  <button id="recordEnd">Stop</button>
+  <button id="playSong">Listen</button>
+  <button id="saveSong">Save</button>
+
+</script>
+
+<script id="songInputViewTemplate" type="html/template">
+  <h1>Awesome musos using web API</h1>
+
+  <h2>Play a major scale</h2>
+
+  <button onclick="noteLowC()">Play a C</button>
+  <button onclick="noteD()">Play a D</button>
+  <button onclick="noteE()">Play an E</button>
+  <button onclick="noteF()">Play a F</button>
+  <button onclick="noteG()">Play a G</button>
+  <button onclick="noteA()">Play an A </button>
+  <button onclick="noteB()">Play a B</button>
+  <button onclick="noteTopC()">Play a C</button>
+
+
+  <h2>Play a minor scale</h2>
+
+
+  <button onclick="noteLowC()">Play a C</button>
+  <button onclick="noteD()">Play a D</button>
+  <button onclick="noteEFlat()">Play an E flat</button>
+  <button onclick="noteF()">Play a F</button>
+  <button onclick="noteG()">Play a G</button>
+  <button onclick="noteGsharp()">Play an A flat</button>
+  <button onclick="noteB()">Play a B</button>
+  <button onclick="noteTopC()">Play a C</button>
+
+
+
+
+  <h3>Notes for a piano octave</h3>
+  <button onclick="noteLowC()">Play a C</button>
+  <button onclick="noteCSharp()" ;>Play a C#</button>
+  <button onclick="noteD()" ;>Play a D</button>
+  <button onclick="noteEFlat()" ;>Play a D# flat</button>
+  <button onclick="noteE()" ;>Play a E</button>
+  <button onclick="noteF()" ;>Play a F</button>
+  <button onclick="noteFSharp()" ;>Play a F#</button>
+  <button onclick="noteG()">Play a G</button>
+  <button onclick="noteGSharp()">Play a G#</button>
+  <button onclick="noteA()">Play an A</button>
+  <button onclick="noteBFlat()" ;>Play an B flat</button>
+  <button onclick="noteB()">Play a B</button>
+  <button onclick="noteTopC()" ;>Play a C</button>
+
+
+  <h3>Notes for a piano octave  top line is the black notes </h3>
+
+
+  <button onclick="noteCSharp()">Play a C#</button>
+  <button onclick="noteEFlat()">Play a D# flat</button>
+  <button onclick="noteFSharp()" ;>Play a F#</button>
+  <button onclick="noteGSharp()" ;>Play a G#</button>
+  <button onclick="noteBFlat()">Play an B flat</button>
+
+  <br>
+
+  <button onclick="noteLowC()">Play a C</button>
+  <button onclick="noteD()" >Play a D</button>
+  <button onclick="noteE()">Play a E</button>
+  <button onclick="noteF()">Play a F</button>
+  <button onclick="noteG()">Play a G</button>
+  <button onclick="noteA()">Play an A</button>
+  <button onclick="noteB()">Play a B</button>
+  <button onclick="noteTopC()">Play a C</button>
+</script>
+
+
+    <canvas width=700 height=100></canvas>
+
+</body>
+
+</html>
