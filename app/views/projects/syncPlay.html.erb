@@ -8,6 +8,47 @@
         <div class="container">
 
             <div id="main"></div>
+
+            <script>
+              $(function() {
+                // Create a new client to connect to Faye
+                // var client = new Faye.Client('http://localhost:9292/faye');
+                // Subscribe to the public channel
+                var public_subscription = window.client.subscribe('/messages/public', function(data) {
+                  console.log(data)
+                  var noteRef = {
+                    65: 3,
+                    83: 5,
+                    68: 7,
+                    70: 8,
+                    71: 10,
+                    72: 12,
+                    74: 14,
+                    75: 15,
+                    76: 3
+                  }
+                  var pitch = noteRef[data.keyCode]
+                  playNote(0, pitch, 0.1)
+                });
+
+                // Handle form submissions and post messages to faye
+                $(document).on("keydown", function(event){
+                  // Publish the message to the public channel
+                  client.publish('/messages/public', {
+                    username: '<%= session[:username] %>',
+                    keyCode: event.which
+                  });
+
+                  // Clear the message box
+                  // $('#message').val('');
+
+                  // Don't actually submit the form, otherwise the page will refresh.
+                  return false;
+                });
+              });
+            </script>
+
+
             <script id="appViewTemplate" type="html/template">
                 <div id="keyboard" class="text-center"></div>
                 <div id="recordButton"></div>
