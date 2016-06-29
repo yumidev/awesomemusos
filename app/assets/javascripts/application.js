@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require faye
 //= require_tree .
+
+
+window.client = new Faye.Client('/faye');
