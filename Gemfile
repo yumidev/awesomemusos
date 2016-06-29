@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faye'
 gem 'faye-rails'
+gem 'thin'
 
 
 group :development, :test do
