@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'projects#home'
   get 'session/new'
+  get '/syncplay' => 'projects#syncPlay'
   resources :songs
   resources :projects
   resources :users
