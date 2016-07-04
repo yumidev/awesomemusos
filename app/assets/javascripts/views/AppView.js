@@ -3,24 +3,18 @@ var note = [];
 var noteTimer;
 var time = 0
 
-var newSong = function () {
-  note = [];
-  time = 0;
-}
-
 var saveSong = function () {
-  // debugger;
   console.log("Let's save our lovely song");
   var song = new app.Song();
-  var songName = prompt("Please enter the song title", "")// this should be written when you click the songSave. like.. prompt?
-  var project_id; // this should be chosen when you create project
-  var stringNotes = JSON.stringify(note); // this should get the array of note.. how??
-  song.set({
-    name: songName,
-    project_id: project_id,
-    song_notes: stringNotes
-  })
-  song.save();
+    var songName = prompt("Please enter the song title", "")// this should be written when you click the songSave. like.. prompt?
+    var project_id; // this should be chosen when you create project
+    var stringNotes = JSON.stringify(note); // this should get the array of note.. how??
+    song.set({
+      name: songName,
+      project_id: project_id,
+      song_notes: stringNotes
+    })
+    song.save();
 }
 
 var playSong = function () {
@@ -58,14 +52,23 @@ var noteArray = function () {
 }
 
 var startFilling = function (event) {
+  $("#recordEnd").css("display", "initial")
+  note = [];
+  time = 0;
+  $("#noteView").html("")
   console.log("Noting started");
   noteTimer = setInterval(function(){noteArray()}, 100);
   $(document).on("keydown", catchKeydown);
+  $("#recordStart").off("click", startFilling);
+  // Have to turn off adding note when recording is stopped
 }
 
 var stopFilling = function(){
   console.log("Noting finished");
+  $("#playSong").css("display", "initial")
   clearInterval(noteTimer)
+  $(document).off("keydown", catchKeydown);
+  $("#recordStart").on("click", startFilling);
 }
 
 var playKeydown = function ( event ) {
@@ -110,10 +113,6 @@ var playKeydown = function ( event ) {
   if ( event.which === app.K_KEY ) {
     event.preventDefault();
     noteTopC();
-  }
-  if ( event.which === app.L_KEY ) {
-    event.preventDefault();
-    foo.start();
   }
   if ( event.which === app.SPACE_KEY ) {
     event.preventDefault();

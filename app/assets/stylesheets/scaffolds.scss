@@ -124,3 +124,13 @@ div {
     list-style: square;
   }
 }
+#playSong {
+  display: none;
+}
+#recordEnd {
+  display: none;
+}
+
+#saveSong:hover {
+ background: lemonchiffon;
+}
