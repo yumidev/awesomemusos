@@ -131,13 +131,10 @@ app.AppView = Backbone.View.extend({
     songInputView.render();
     var recordButtonView = new app.RecordButtonView();
     recordButtonView.render();
-    var noteView = new app.NoteView();
-    noteView.render();
     $(document).on("keydown", playKeydown);
     $("#recordStart").on("click", startFilling);
     $("#recordEnd").on("click", stopFilling);
     $("#playSong").on("click", playSong);
     $("#saveSong").on("click", saveSong);
-    $("#newSong").on("click", newSong);
   }
 })

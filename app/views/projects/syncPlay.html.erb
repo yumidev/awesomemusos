@@ -1,14 +1,9 @@
 <!doctype html>
 <html>
-
-
     <head></head>
-
     <body class="body-bg">
         <div class="container">
-
             <div id="main"></div>
-
             <script>
               $(function() {
                 // Create a new client to connect to Faye
@@ -27,8 +22,20 @@
                     75: 15,
                     76: 3
                   }
+                  // if (Object.keys(noteRef)data.keyCode )
                   var pitch = noteRef[data.keyCode]
-                  playNote(0, pitch, 0.1)
+                  if (data && pitch !== undefined) {
+                    playNote(0, pitch, 0.1)
+                    var pitches='';
+                    // debugger;
+                    if (data) {
+                      pitches+= data.keyCode;
+                    }
+                    var oneNote = $("<span /span>")
+                    oneNote.text( pitches );
+                    oneNote.appendTo( "#noteView2" );
+
+                  }
                 });
 
                 // Handle form submissions and post messages to faye
@@ -38,20 +45,17 @@
                     username: '<%= session[:username] %>',
                     keyCode: event.which
                   });
-
-                  // Clear the message box
-                  // $('#message').val('');
-
                   // Don't actually submit the form, otherwise the page will refresh.
                   return false;
                 });
               });
             </script>
 
-
             <script id="appViewTemplate" type="html/template">
                 <div id="keyboard" class="text-center"></div>
                 <div id="recordButton"></div>
+                <div id="noteView"></div>
+                <div id="noteView2"></div>
             </script>
 
             <script id="recordButtonViewTemplate" type="html/template">
@@ -66,6 +70,7 @@
             </script>
 
             <script id="songInputViewTemplate" type="html/template">
+              <h1 style="background:white;border-radius:30%;height:70px;">Play together</h1>
                 <div class="row">
                     <div class="col-xs-24 text-center">
                         <div class="text-center margin-top">
